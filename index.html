@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+</head>
+<style>
+
+
+    .titulin{
+       size: 10px;
+       
+
+    }
+    body{
+        text-align: center;
+    }
+
+    canvas{
+        border: 2px solid pink;
+
+       
+    }
+
+    button{
+        background-color: rgb(255, 255, 255);
+        cursor: pointer;
+        border: none;
+        padding: 16px 32px;
+       color: black;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+    }
+    button::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+        45deg,
+        red,blue,deeppink,blue,
+        red,blue,deeppink,blue
+        );
+        background-size: 800%;
+        border-radius: 10px;
+        filter: blur(8px);
+        animation: glowing 20s linear infinite;
+    }
+
+    @keyframes glowing{
+        0%{
+            background-position: 0,0;
+        }
+        50%{
+            background-position: 400% 0;
+        }
+        100%{
+            background-position: 0 0;
+        }
+
+    }
+</style>
+<body>
+    <h1 id="titulin">DibujaloTU</h1>
+    <div id="nnResult">...</div>
+  
+    <button id="clean">Limpiar</button>
+    <hr/>
+    <script src="main.js"></script>
+</body>
+</html>
